@@ -5,12 +5,12 @@ import Container from "./Container"
 import styles from "./Navbar.module.css"
 import logo from "../../img/costs_logo.png"
 
-function NavBar(){
+function Navbar(){
     return (
-    <nav className="Navbar">
-        <Container>
+    <nav className = {styles.navbar}>
+      <Container>
             <Link>
-                <img src={logo} alt="leoflix"/>
+                <img src ={logo} alt="leoflix"/>
             </Link>
 
             <ul className={styles.list}>
@@ -24,9 +24,9 @@ function NavBar(){
                     <Link to="/genero">Gênero</Link>
                 </li>
             </ul>
-        </Container>
+            </Container> 
     </nav>
-    )
+    );
 }
 
-export default NavBar
+export default Navbar
