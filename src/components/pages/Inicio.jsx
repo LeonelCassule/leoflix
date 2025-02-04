@@ -13,7 +13,10 @@ function Inicio(){
 
     useEffect(()=> {
         getPokemon()
-        .then(data => console.log(data))
+         .then(data => {
+          console.log(data)
+          setPokemons(data)}
+        )
         .catch(err => console.error(err));
 
     }, [])
@@ -22,15 +25,19 @@ function Inicio(){
     return (
         <div>
          <div>
-           <h1>Filme em Destaque</h1>
-           <a href="#">Filmes Novos</a>
+           <h1>Pokemons em Destaque</h1>
+           <a href="#">Novos Pokemons todos os dias</a>
          </div>
 
          <Container>
-           {pokemons.length > 0 &&  pokemons.map((pokemon) =>
-           <p>pokemon.name</p>
+           {pokemons.length > 0 && 
+               pokemons.map((pokemon) => <PokemonCard
+                ket = {pokemon.id} 
+                name = {pokemon.name}
+                image = {pokemon.url}/>
           )
            }
+           
          
           </Container>
        </div>
